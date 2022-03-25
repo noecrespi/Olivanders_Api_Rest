@@ -12,7 +12,7 @@ class Item(Updateable):
         self.quality = quality
 
     def recalcularQuality(self, cantidad):
-        if self.quality + cantidad > 0:
+        if self.quality + cantidad >= 0:
             self.quality += cantidad
         else: 
             self.quality = 0 
@@ -56,11 +56,11 @@ class Backstage(Item):
         Item.__init__(self, name, sellIn, quality)
 
     def updateQuality(self):
-        if self.sellIn > 10:
+        if self.sellIn >= 10:
             self.recalcularQuality(-1)
-        if self.sellIn < 10: 
+        elif self.sellIn < 10: 
             self.recalcularQuality(-2)
-        if self.sellIn < 5: 
+        elif self.sellIn < 5: 
             self.recalcularQuality(-3)
         else:
             self.quality = 0
@@ -73,7 +73,7 @@ class AgedBrie(Item):
 
     def updateQuality(self):
         if self.sellIn <= 0:
-            self.recalcularQuality(-2)
+            self.recalcularQuality(2)
         else:
-            self.recalcularQuality(-1)
+            self.recalcularQuality(1)
         self.sellIn -= 1
