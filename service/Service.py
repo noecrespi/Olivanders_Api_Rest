@@ -1,11 +1,10 @@
 from flask_restful import fields, marshal_with
 from repository.db import getDb
-from flask import g
+from flask import g, redirect, render_template
 from domain.GildedRose import *
 from repository.models import Items 
 
-
-
+""" Parte que llora y no se si está bien """
 class Service:
     
     inventoryResourceFields = {
@@ -58,8 +57,10 @@ class Service:
     @marshal_with(inventoryResourceFields)
     def createItem(item):
         db = getDb()
-        db.insert_one(item)
+        item = g.Items(name=item['name'], sell_in=item['sell_in'], quality=item['quality'])
+        item.save()
         return 'Se ha añadido correctamente el item'
+
 
     """ Eliminar un item """
     def deleteItem(name):
@@ -71,7 +72,6 @@ class Service:
                 message = 'Se han borrado los objetos'
         return message
         
-
     """ Actualizar los items """
     def updateQuality():
         db = getDb()
