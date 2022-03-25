@@ -70,6 +70,7 @@ def getDb():
 """ Iniciar la base de datos y poblarlo """
 def initDb():
     db = getDb()
+    Items.drop_collection()
     for item in defaultItems:
         Items(
             name = item['name'],
@@ -83,6 +84,12 @@ def initDb():
 def initDbConmmand():
     initDb()
     click.echo('La base de datos se ha poblado bien')
+
+def close_db():
+    db = g.pop('db', None)
+
+    if db is not None:
+        db.close()
 
 def initApp(app):
     app.cli.add_command(initDbConmmand)
