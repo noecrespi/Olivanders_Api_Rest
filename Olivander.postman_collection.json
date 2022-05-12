@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "5f6c75af-b9de-4160-9f98-44484f23ac59",
+		"name": "Olivander",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/getAllItems",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getAllItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000//items",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateQuality",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/updateQuality",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"updateQuality"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/items/Sulfuras, Hand of Ragnaros",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"items",
+						"Sulfuras, Hand of Ragnaros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/items/Sulfuras, Hand of Ragnaros",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"items",
+						"Sulfuras, Hand of Ragnaros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET quality",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/quality/50",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"quality",
+						"50"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
